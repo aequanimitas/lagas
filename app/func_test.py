@@ -11,6 +11,7 @@ class AnonUserTest(unittest.TestCase):
     def setUp(self):
         self.TEST_URL = 'http://localhost:9000'
         self.browser = webdriver.Firefox()
+        self.browser.implicitly_wait(3)
 
     def tearDown(self):
         self.browser.quit()
