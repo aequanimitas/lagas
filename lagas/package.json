@@ -1,0 +1,21 @@
+{
+  "name": "lagas",
+  "version": "0.0.1",
+  "description": "bodyweight app",
+  "main": "index.js",
+  "dependencies": {
+    "bower": "^1.4.1",
+    "ejs": "^2.3.1",
+    "express": "^4.12.4"
+  },
+  "devDependencies": {
+    "karma": "^0.12.36",
+    "nodemon": "^1.3.7",
+    "protractor": "^2.1.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "hta",
+  "license": "MIT"
+}
