@@ -1,0 +1,31 @@
+{
+  "name": "lagas",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aequanimitas/lagas.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aequanimitas/lagas/issues"
+  },
+  "homepage": "https://github.com/aequanimitas/lagas#readme",
+  "dependencies": {
+    "bootstrap": "^3.3.5",
+    "express": "^4.13.3",
+    "react-dom": "^0.14.3",
+    "webpack": "^1.12.8"
+  },
+  "devDependencies": {
+    "babel-core": "^6.2.1",
+    "babel-loader": "^6.2.0",
+    "babel-preset-es2015": "^6.1.18",
+    "babel-preset-react": "^6.1.18"
+  }
+}
