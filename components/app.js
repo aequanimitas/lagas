@@ -1,39 +1,38 @@
 var React = require('react');
 
+var RoutineWorkBox = React.createClass({
+  render: function () {
+    return (<div className="col-xs-6 col-sm-3 routine-work-box">
+             <span>{ this.props.label } </span>  
+           </div>);
+  }
+});
+
 var BodylineWork = React.createClass({
-  render() {
-    return (
-      <div className="col-xs-6 col-sm-3">
-       <span>Bodyline Work</span>  
-      </div>
-    );
+  label: 'Bodyline Work',
+  render: function() {
+    return <RoutineWorkBox label={this.label} /> 
   }
 });
+
 var SkillWork = React.createClass({
-  render() {
-    return (
-      <div className="col-xs-6 col-sm-3">
-        <span>Skill Work</span>
-      </div>
-    );
+  label: 'Skill Work',
+  render: function() {
+    return <RoutineWorkBox label={this.label} /> 
   }
 });
+
 var StrengthWork = React.createClass({
-  render() {
-    return (
-      <div className="col-xs-6 col-sm-3">
-        <span>Strength Work</span>
-      </div>
-    );
+  label: 'Strength Work',
+  render: function() {
+    return <RoutineWorkBox label={this.label} /> 
   }
 });
+
 var DynamicStretches = React.createClass({
-  render() {
-    return (
-      <div className="col-xs-6 col-sm-3">
-        <span>Dynamic Stretches</span>
-      </div>
-    );
+  label: 'Dynamic Stretches',
+  render: function() {
+    return <RoutineWorkBox label={this.label} /> 
   }
 });
 
