@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:js": "./node_modules/webpack/bin/webpack.js --progress --profile --colors",
+    "watch:static": "node server.livereload.js",
+    "serve": "PORT=4000 node server.js",
+    "watch": "npm run watch:static & npm run serve"
   },
   "repository": {
     "type": "git",
@@ -26,6 +30,8 @@
     "babel-core": "^6.2.1",
     "babel-loader": "^6.2.0",
     "babel-preset-es2015": "^6.1.18",
-    "babel-preset-react": "^6.1.18"
+    "babel-preset-react": "^6.1.18",
+    "node-livereload": "^0.6.0",
+    "node-sass": "^3.4.2"
   }
 }
