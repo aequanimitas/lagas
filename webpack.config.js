@@ -1,6 +1,3 @@
-// dev
-//
-
 module.exports = {
   entry: './client.js',
   output: {

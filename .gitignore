@@ -2,3 +2,4 @@ node_modules/
 npmcomp.sh
 bundle.js
 *.sw*
+npm-debug.log

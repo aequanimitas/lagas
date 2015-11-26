@@ -4,11 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "karma start --single-run",
+    "test:watch": "karma start",
     "build:js": "./node_modules/webpack/bin/webpack.js --progress --profile --colors",
     "watch:static": "node server.livereload.js",
     "serve": "PORT=4000 node server.js",
-    "watch": "npm run watch:static & npm run serve"
+    "watch": "npm run watch:static & npm run serve",
+    "lint": "eslint ./"
   },
   "repository": {
     "type": "git",
@@ -22,16 +24,33 @@
   "homepage": "https://github.com/aequanimitas/lagas#readme",
   "dependencies": {
     "bootstrap": "^3.3.5",
+    "classnames": "^2.2.1",
     "express": "^4.13.3",
     "react-dom": "^0.14.3",
     "webpack": "^1.12.8"
   },
   "devDependencies": {
     "babel-core": "^6.2.1",
+    "babel-eslint": "^4.1.6",
     "babel-loader": "^6.2.0",
     "babel-preset-es2015": "^6.1.18",
     "babel-preset-react": "^6.1.18",
+    "chai": "^3.4.1",
     "classnames": "^2.2.0",
+    "eslint": "^1.10.1",
+    "eslint-config-airbnb": "^1.0.0",
+    "eslint-plugin-babel": "^2.2.0",
+    "eslint-plugin-mocha": "^1.1.0",
+    "eslint-plugin-react": "^3.10.0",
+    "karma": "^0.13.15",
+    "karma-chrome-launcher": "^0.2.1",
+    "karma-firefox-launcher": "^0.1.7",
+    "karma-mocha": "^0.2.1",
+    "karma-mocha-reporter": "^1.1.2",
+    "karma-sinon-chai": "^1.1.0",
+    "karma-sourcemap-loader": "^0.3.6",
+    "karma-webpack": "^1.7.0",
+    "mocha": "^2.3.4",
     "node-livereload": "^0.6.0",
     "node-sass": "^3.4.2"
   }
