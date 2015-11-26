@@ -3,14 +3,12 @@ import classNames from 'classnames';
 
 export class GenericFormGroup extends React.Component {
   render() {
-
     let classes = {
-      'form-group': true,
-      'lagas-form-group': true
+      'form-group': true
     };
 
     return (
-      <div className={classNames(classes)}>
+      <div className={classNames(classes, this.props.fgClass)}>
         {this.props.children}
       </div>
     );

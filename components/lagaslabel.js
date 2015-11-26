@@ -1,0 +1,12 @@
+import React from 'react';
+import classNames from 'classnames';
+
+export class Label extends React.Component {
+  render() {
+    return (
+      <span className={classNames(this.props.lblClass)}>
+        {this.props.children}
+      </span>
+    );
+  }
+};

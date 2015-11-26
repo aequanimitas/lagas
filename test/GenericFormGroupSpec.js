@@ -22,8 +22,9 @@ describe('GenericFormGroup', () => {
   });
 
   it('has a default class form .lagas-form-group', () => {
+
     let instance = ReactTestUtils.renderIntoDocument(
-      <GenericFormGroup>
+      <GenericFormGroup fgClass='lagas-form-group'>
       </GenericFormGroup>
     );
     assert.ok(ReactTestUtils.findRenderedDOMComponentWithClass(instance, 'lagas-form-group'));
