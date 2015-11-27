@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import ReactTestUtils from 'react/lib/ReactTestUtils';
 
 import {Button} from '../components/button';
@@ -20,4 +21,16 @@ describe('Increment - Decrement Buttons', () => {
     assert.ok(withClass(button, 'up-button'));
     assert.ok(withClass(button, 'up-down-buttons'));
   });
+
+  it('callback should be called', () => {
+
+    let doneFn = () => {
+      done();
+    };
+
+    let button = ReactTestUtils.renderIntoDocument(
+      <Button btnClass='btn up-button up-down-buttons' onClick={doneFn}/>
+    );
+    ReactTestUtils.Simulate.click(ReactDOM.findDOMNode(button));
+  })
 });

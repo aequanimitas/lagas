@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactTestUtils from 'react/lib/ReactTestUtils';
-import ReactDOM from 'react-dom';
 import {Spinner} from '../components/spinner';
 import {Button} from '../components/button';
 
@@ -23,13 +22,27 @@ describe ('Spinner', () => {
         <Button></Button>
       </Spinner>
     );
-    let buttons = ReactDOM.findDOMNode(instance).children;
+    let buttons = ReactTestUtils.scryRenderedDOMComponentsWithTag(instance, 'button');
     assert.equal(buttons.length, 2);
-    assert.equal(buttons[0].nodeName, 'BUTTON');
-    assert.equal(buttons[1].nodeName, 'BUTTON');
   });
 
-  it.skip('buttons should have icons inside them', () => {
-  
+  it('buttons should have icons inside them', () => {
+    let instance = ReactTestUtils.renderIntoDocument(
+      <Spinner>
+        <Button><i></i></Button>
+        <Button></Button>
+      </Spinner>
+    );
+    let buttons = ReactTestUtils.scryRenderedDOMComponentsWithTag(instance, 'button');
+    assert.equal(buttons[0].children.length, 1);
   });
+
+  it.skip('input should also be rendered', () => {
+    let instance = ReactTestUtils.renderIntoDocument(
+      <Spinner>
+        <Input></Input>
+      </Spinner>
+    );
+  });
+
 });
