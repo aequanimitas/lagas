@@ -22,15 +22,13 @@ describe('Increment - Decrement Buttons', () => {
     assert.ok(withClass(button, 'up-down-buttons'));
   });
 
-  it('callback should be called', () => {
-
+  it('callback should be called', (done) => {
     let doneFn = () => {
       done();
     };
-
     let button = ReactTestUtils.renderIntoDocument(
       <Button btnClass='btn up-button up-down-buttons' onClick={doneFn}/>
     );
-    ReactTestUtils.Simulate.click(ReactDOM.findDOMNode(button));
+    ReactTestUtils.Simulate.click(ReactDOM.findDOMNode(button))
   })
 });

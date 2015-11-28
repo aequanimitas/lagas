@@ -5,7 +5,7 @@ export class Button extends React.Component {
 
   render() {
     return (
-      <button className={classNames(this.props.btnClass)}>
+      <button {...this.props} className={classNames(this.props.btnClass)}>
         {this.props.children}
       </button>
     );
