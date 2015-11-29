@@ -1,12 +1,11 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import ReactTestUtils from 'react/lib/ReactTestUtils';
 import {Spinner} from '../components/spinner';
-import {Button} from '../components/button';
 
 describe ('Spinner', () => {
   const intoDoc = ReactTestUtils.renderIntoDocument;
   const withTag = ReactTestUtils.findRenderedDOMComponentWithTag;
-
 
   it('should have an input node', () => {
     let instance = ReactTestUtils.renderIntoDocument(
@@ -15,34 +14,29 @@ describe ('Spinner', () => {
     assert.ok(ReactTestUtils.findRenderedDOMComponentWithTag(instance, 'div'));
   });
 
-  it('should have two buttons', () => {
-    let instance = ReactTestUtils.renderIntoDocument(
-      <Spinner>
-        <Button></Button>
-        <Button></Button>
-      </Spinner>
-    );
-    let buttons = ReactTestUtils.scryRenderedDOMComponentsWithTag(instance, 'button');
-    assert.equal(buttons.length, 2);
-  });
+  describe('buttons', () => {
+    let instance, buttons, upButton, downButton;
+    beforeEach(() => {
+      instance = ReactTestUtils.renderIntoDocument(<Spinner />);
+      buttons = ReactTestUtils.scryRenderedDOMComponentsWithTag(instance, 'button');
+      upButton = ReactDOM.findDOMNode(buttons[0]);
+      downButton = ReactDOM.findDOMNode(buttons[1]);
+    });
 
-  it('buttons should have icons inside them', () => {
-    let instance = ReactTestUtils.renderIntoDocument(
-      <Spinner>
-        <Button><i></i></Button>
-        <Button></Button>
-      </Spinner>
-    );
-    let buttons = ReactTestUtils.scryRenderedDOMComponentsWithTag(instance, 'button');
-    assert.equal(buttons[0].children.length, 1);
-  });
+    it('should be two', () => {
+      assert.equal(buttons.length, 2);
+      assert.equal(upButton.tagName, 'BUTTON');
+      assert.ok(upButton.classList.contains('btn'));
+      assert.ok(upButton.classList.contains('up-button'));
+      assert.ok(upButton.classList.contains('up-down-buttons'));
+      assert.ok(downButton.classList.contains('btn'));
+      assert.ok(downButton.classList.contains('down-button'), 'should have class down-button');
+      assert.ok(downButton.classList.contains('up-down-buttons'));
+    });
 
-  it.skip('input should also be rendered', () => {
-    let instance = ReactTestUtils.renderIntoDocument(
-      <Spinner>
-        <Input></Input>
-      </Spinner>
-    );
+    it('should have icons inside them', () => {
+      assert.equal(upButton.children.length, 1);
+      assert.equal(downButton.children.length, 1);
+    });
   });
-
 });
