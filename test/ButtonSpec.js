@@ -5,23 +5,23 @@ import ReactTestUtils from 'react/lib/ReactTestUtils';
 import {Button} from '../components/button';
 
 describe('Increment - Decrement Buttons', () => {
-  let withTag = ReactTestUtils.findRenderedDOMComponentWithTag,
-      withClass = ReactTestUtils.findRenderedDOMComponentWithClass,
-      upButton, downButton;
+  let withTag = ReactTestUtils.findRenderedDOMComponentWithTag;
+  let withClass = ReactTestUtils.findRenderedDOMComponentWithClass;
+  let upButton;
+  let downButton;
 
   beforeEach(() => {
-      <Button btnClass='btn up-button up-down-buttons' />
     upButton = ReactTestUtils.renderIntoDocument(
-        <Button btnClass='btn up-button up-down-buttons' />
+      <Button btnClass='btn up-button up-down-buttons' />
     );
     downButton = ReactTestUtils.renderIntoDocument(
-        <Button btnClass='btn down-button up-down-buttons' />
+      <Button btnClass='btn down-button up-down-buttons' />
     );
   });
 
   it('should just exist', () => {
-    assert.ok(withTag(upButton, 'button'))
-    assert.ok(withTag(downButton, 'button'))
+    assert.ok(withTag(upButton, 'button'));
+    assert.ok(withTag(downButton, 'button'));
   });
 
   it('should have class btn', () => {
@@ -37,6 +37,6 @@ describe('Increment - Decrement Buttons', () => {
     let button = ReactTestUtils.renderIntoDocument(
       <Button btnClass='btn up-button up-down-buttons' btnOnClick={doneFn}/>
     );
-    ReactTestUtils.Simulate.click(ReactDOM.findDOMNode(button))
-  })
+    ReactTestUtils.Simulate.click(ReactDOM.findDOMNode(button));
+  });
 });

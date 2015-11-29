@@ -10,3 +10,8 @@ export class Button extends React.Component {
     );
   }
 }
+
+Button.propTypes = {
+  btnOnClick: React.PropTypes.func.isRequired,
+  btnClass: React.PropTypes.array
+};

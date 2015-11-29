@@ -13,3 +13,7 @@ export class GenericFormGroup extends React.Component {
     );
   }
 }
+
+GenericFormGroup.propTypes = {
+  fgClass: React.PropTypes.string
+};

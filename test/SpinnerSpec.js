@@ -3,10 +3,7 @@ import ReactDOM from 'react-dom';
 import ReactTestUtils from 'react/lib/ReactTestUtils';
 import {Spinner} from '../components/spinner';
 
-describe ('Spinner', () => {
-  const intoDoc = ReactTestUtils.renderIntoDocument;
-  const withTag = ReactTestUtils.findRenderedDOMComponentWithTag;
-
+describe('Spinner', () => {
   it('should have an input node', () => {
     let instance = ReactTestUtils.renderIntoDocument(
       <Spinner />

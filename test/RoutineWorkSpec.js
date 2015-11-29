@@ -10,7 +10,6 @@ describe('Routine Work, a single exercise', () => {
         <Label lblClass='lagas-routine-label' />
       </GenericFormGroup>
     );
-    console.dir(instance);
     assert.ok(ReactTestUtils.findRenderedDOMComponentWithClass(instance, 'lagas-form-group'));
     assert.ok(ReactTestUtils.findRenderedDOMComponentWithClass(instance, 'lagas-routine-work'));
     assert.ok(ReactTestUtils.findRenderedDOMComponentWithClass(instance, 'lagas-routine-label'));
@@ -23,11 +22,9 @@ describe('Routine Work, a single exercise', () => {
         <Label lblClass='lagas-routine-label' />
       </GenericFormGroup>
     );
-    console.dir(instance);
     assert.ok(ReactTestUtils.findRenderedDOMComponentWithClass(instance, 'lagas-form-group'));
     assert.ok(ReactTestUtils.findRenderedDOMComponentWithClass(instance, 'lagas-routine-work'));
     assert.ok(ReactTestUtils.findRenderedDOMComponentWithClass(instance, 'lagas-routine-label'));
     assert.ok(ReactTestUtils.findRenderedDOMComponentWithTag(instance, 'span'));
   });
-
 });

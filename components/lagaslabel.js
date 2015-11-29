@@ -9,4 +9,8 @@ export class Label extends React.Component {
       </span>
     );
   }
+}
+
+Label.propTypes = {
+  lblClass: React.PropTypes.string
 };
