@@ -6,7 +6,6 @@ export class GenericFormGroup extends React.Component {
     let classes = {
       'form-group': true
     };
-
     return (
       <div className={classNames(classes, this.props.fgClass)}>
         {this.props.children}

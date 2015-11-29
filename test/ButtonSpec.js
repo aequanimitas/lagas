@@ -5,21 +5,29 @@ import ReactTestUtils from 'react/lib/ReactTestUtils';
 import {Button} from '../components/button';
 
 describe('Increment - Decrement Buttons', () => {
-  var withTag = ReactTestUtils.findRenderedDOMComponentWithTag,
-      withClass = ReactTestUtils.findRenderedDOMComponentWithClass;
+  let withTag = ReactTestUtils.findRenderedDOMComponentWithTag,
+      withClass = ReactTestUtils.findRenderedDOMComponentWithClass,
+      upButton, downButton;
+
+  beforeEach(() => {
+      <Button btnClass='btn up-button up-down-buttons' />
+    upButton = ReactTestUtils.renderIntoDocument(
+        <Button btnClass='btn up-button up-down-buttons' />
+    );
+    downButton = ReactTestUtils.renderIntoDocument(
+        <Button btnClass='btn down-button up-down-buttons' />
+    );
+  });
 
   it('should just exist', () => {
-    let button = ReactTestUtils.renderIntoDocument(<Button />);
-    assert.ok(withTag(button, 'button'))
+    assert.ok(withTag(upButton, 'button'))
+    assert.ok(withTag(downButton, 'button'))
   });
 
   it('should have class btn', () => {
-    let button = ReactTestUtils.renderIntoDocument(
-      <Button btnClass='btn up-button up-down-buttons' />
-    );
-    assert.ok(withClass(button, 'btn'));
-    assert.ok(withClass(button, 'up-button'));
-    assert.ok(withClass(button, 'up-down-buttons'));
+    assert.ok(withClass(upButton, 'btn'));
+    assert.ok(withClass(upButton, 'up-button'));
+    assert.ok(withClass(upButton, 'up-down-buttons'));
   });
 
   it('callback should be called', (done) => {

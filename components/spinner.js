@@ -1,7 +1,7 @@
 import React from 'react';
 import {Button} from '../components/button';
 
-export class Spinner extends React.Component{
+export class Spinner extends React.Component {
   render() {
     return (
       <div>
@@ -10,4 +10,4 @@ export class Spinner extends React.Component{
       </div>
     );
   }
-};
+}
