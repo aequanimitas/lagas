@@ -7,7 +7,7 @@ describe('Input', () => {
   let instance;
 
   it('should have a default value', () => {
-    instance = ReactTestUtils.renderIntoDocument(<Input defaultVal="12" />);
+    instance = ReactTestUtils.renderIntoDocument(<Input default="12" />);
     let inp = ReactDOM.findDOMNode(instance);
     expect(inp.type).to.equal('text');
     expect(inp.defaultValue).to.equal('12');

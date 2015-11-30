@@ -4,21 +4,22 @@ import ReactTestUtils from 'react/lib/ReactTestUtils';
 import {Spinner} from '../components/spinner';
 
 describe('Spinner', () => {
+
+  let instance, buttons, upButton, downButton, input;
+
+  beforeEach(() => {
+    instance = ReactTestUtils.renderIntoDocument(<Spinner initVal={6}/>);
+    buttons = ReactTestUtils.scryRenderedDOMComponentsWithTag(instance, 'button');
+    input = ReactTestUtils.findRenderedDOMComponentWithTag(instance, 'input');
+    upButton = ReactDOM.findDOMNode(buttons[0]);
+    downButton = ReactDOM.findDOMNode(buttons[1]);
+  });
+
   it('should be a div', () => {
-    let instance = ReactTestUtils.renderIntoDocument(<Spinner />);
     assert.ok(ReactTestUtils.findRenderedDOMComponentWithTag(instance, 'div'));
   });
 
   describe('buttons', () => {
-    let instance, buttons, upButton, downButton, input;
-    beforeEach(() => {
-      instance = ReactTestUtils.renderIntoDocument(<Spinner />);
-      buttons = ReactTestUtils.scryRenderedDOMComponentsWithTag(instance, 'button');
-      input = ReactTestUtils.findRenderedDOMComponentWithTag(instance, 'input');
-      upButton = ReactDOM.findDOMNode(buttons[0]);
-      downButton = ReactDOM.findDOMNode(buttons[1]);
-    });
-
     it('should be two', () => {
       assert.equal(buttons.length, 2);
       assert.equal(upButton.tagName, 'BUTTON');
@@ -36,9 +37,14 @@ describe('Spinner', () => {
       assert.equal(downButton.children.length, 1);
       assert.ok(downButton.children[0].tagName, 'icon');
     });
-    it.skip('on click, should update the input value', () => {
-      ReactTestUtils.Simulate.click(upButton);
-      assert.equal(input.state.value, 5);
-    });
+  });
+
+  it('on click, should update the input value', () => {
+    ReactTestUtils.Simulate.click(downButton);
+    assert.equal(instance.state.count, 5);
+    assert.equal(input.value, 5);
+    ReactTestUtils.Simulate.click(upButton);
+    assert.equal(instance.state.count, 6);
+    assert.equal(input.value, 6);
   });
 });

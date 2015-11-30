@@ -12,10 +12,10 @@ describe('Increment - Decrement Buttons', () => {
 
   beforeEach(() => {
     upButton = ReactTestUtils.renderIntoDocument(
-      <Button btnClass={['btn', 'up-button', 'up-down-buttons']} btnOnClick={() => {}}/>
+      <Button btnClass={['btn', 'up-button', 'up-down-buttons']}/>
     );
     downButton = ReactTestUtils.renderIntoDocument(
-      <Button btnClass={['btn', 'down-button', 'up-down-buttons']} btnOnClick={() => {}}/>
+      <Button btnClass={['btn', 'down-button', 'up-down-buttons']}/>
     );
   });
 
@@ -35,7 +35,7 @@ describe('Increment - Decrement Buttons', () => {
       done();
     };
     let button = ReactTestUtils.renderIntoDocument(
-      <Button btnClass={['btn', 'up-button', 'up-down-buttons']} btnOnClick={doneFn}/>
+      <Button btnClass={['btn', 'up-button', 'up-down-buttons']} onClick={doneFn}/>
     );
     ReactTestUtils.Simulate.click(ReactDOM.findDOMNode(button));
   });
