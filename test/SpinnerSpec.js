@@ -37,6 +37,10 @@ describe('Spinner', () => {
       assert.equal(downButton.children.length, 1);
       assert.ok(downButton.children[0].tagName, 'icon');
     });
+
+    it('should be wrapped in a div', () => {
+      assert.fail('Buttons are not wrapped');
+    });
   });
 
   it('on click, should update the input value', () => {

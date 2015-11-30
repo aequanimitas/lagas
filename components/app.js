@@ -5,7 +5,7 @@ export class App extends React.Component {
   render() {
     return (
       <div>
-        <Spinner />
+        <Spinner initVal={6}/>
       </div>
     );
   }

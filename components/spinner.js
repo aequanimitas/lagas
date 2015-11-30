@@ -9,6 +9,7 @@ export class Spinner extends React.Component {
   }
 
   changeCount(arg) {
+
     if (arg === 'inc') {
       this.setState({count: this.state.count + 1});
     } else if (arg === 'dec') {
