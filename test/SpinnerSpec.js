@@ -4,18 +4,17 @@ import ReactTestUtils from 'react/lib/ReactTestUtils';
 import {Spinner} from '../components/spinner';
 
 describe('Spinner', () => {
-  it('should have an input node', () => {
-    let instance = ReactTestUtils.renderIntoDocument(
-      <Spinner />
-    );
+  it('should be a div', () => {
+    let instance = ReactTestUtils.renderIntoDocument(<Spinner />);
     assert.ok(ReactTestUtils.findRenderedDOMComponentWithTag(instance, 'div'));
   });
 
   describe('buttons', () => {
-    let instance, buttons, upButton, downButton;
+    let instance, buttons, upButton, downButton, input;
     beforeEach(() => {
       instance = ReactTestUtils.renderIntoDocument(<Spinner />);
       buttons = ReactTestUtils.scryRenderedDOMComponentsWithTag(instance, 'button');
+      input = ReactTestUtils.findRenderedDOMComponentWithTag(instance, 'input');
       upButton = ReactDOM.findDOMNode(buttons[0]);
       downButton = ReactDOM.findDOMNode(buttons[1]);
     });
@@ -33,7 +32,13 @@ describe('Spinner', () => {
 
     it('should have icons inside them', () => {
       assert.equal(upButton.children.length, 1);
+      assert.ok(upButton.children[0].tagName, 'icon');
       assert.equal(downButton.children.length, 1);
+      assert.ok(downButton.children[0].tagName, 'icon');
+    });
+    it.skip('on click, should update the input value', () => {
+      ReactTestUtils.Simulate.click(upButton);
+      assert.equal(input.state.value, 5);
     });
   });
 });

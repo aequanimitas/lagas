@@ -2,8 +2,10 @@
   "extends": ["eslint-config-airbnb"],
   "env": {
     "browser": true,
-    "node": true,
-    "mocha": true
+    "node": true
+  },
+  "globals": {
+    "assert": true
   },
   "ecmaFeatures": {
     "jsx": true
@@ -26,15 +28,6 @@
     "babel/object-shorthand": 2,
     "react/jsx-boolean-value": 2,
     "react/jsx-no-duplicate-props": 2,
-    "react/sort-comp": 0,
-    "react/prop-types": [2, { "ignore": [
-        "children",
-        "className",
-        "style",
-        "bsStyle",
-        "bsClass",
-        "bsSize"
-        ]
-    }],
+    "react/sort-comp": 0
   }
 }
