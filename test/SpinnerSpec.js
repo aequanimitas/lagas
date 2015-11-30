@@ -8,17 +8,17 @@ describe('Spinner', () => {
   let instance, buttons, upButton, downButton, input;
 
   beforeEach(() => {
-    instance = ReactTestUtils.renderIntoDocument(<Spinner initVal={6} min={5} max={8} btnWrapper={<div class='btn-wrap' />}/>);
+    instance = ReactTestUtils.renderIntoDocument(<Spinner initVal={6} min={5} max={8} btnWrapperClass={['btn-wrapper']} />);
     buttons = ReactTestUtils.scryRenderedDOMComponentsWithTag(instance, 'button');
     input = ReactTestUtils.findRenderedDOMComponentWithTag(instance, 'input');
     upButton = ReactDOM.findDOMNode(buttons[0]);
     downButton = ReactDOM.findDOMNode(buttons[1]);
   });
 
-  it('should be a div', () => {
-    assert.ok(ReactTestUtils.findRenderedDOMComponentWithTag(instance, 'div'));
+  it('should have class spinner', () => {
+    assert.ok(ReactDOM.findDOMNode(instance).classList.contains('spinner'));
   });
-
+ 
   describe('buttons', () => {
     it('should be two', () => {
       assert.equal(buttons.length, 2);
@@ -39,7 +39,8 @@ describe('Spinner', () => {
     });
 
     it('should be wrapped in a div', () => {
-      assert.fail('Buttons are not wrapped');
+      let wrapper = ReactTestUtils.findRenderedDOMComponentWithClass(instance, 'btn-wrapper');
+      assert.equal(wrapper.children.length, 2);
     });
   });
 

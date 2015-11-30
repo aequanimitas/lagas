@@ -22,10 +22,20 @@ export class Spinner extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className={'input-group spinner'}>
         <Input onChange={this.handleOnChange.bind(this)} value={this.state.count} />
-        <Button onClick={this.changeCount.bind(this, 'inc')} btnClass={['btn', 'up-button', 'up-down-buttons']}><i></i></Button>
-        <Button onClick={this.changeCount.bind(this, 'dec')} btnClass={['btn', 'down-button', 'up-down-buttons']}><i></i></Button>
+        <div className={'btn-wrapper'}>
+          <Button 
+            onClick={this.changeCount.bind(this, 'inc')} 
+            btnClass={['btn', 'up-button', 'up-down-buttons']}>
+            <i className={'fa fa-caret-up'}></i>
+          </Button>
+          <Button 
+            onClick={this.changeCount.bind(this, 'dec')} 
+            btnClass={['btn', 'down-button', 'up-down-buttons']}>
+            <i className={'fa fa-caret-down'}></i>
+          </Button>
+        </div>
       </div>
     );
   }
