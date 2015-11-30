@@ -45,10 +45,19 @@ describe('Spinner', () => {
 
   it('on click, should update the input value', () => {
     ReactTestUtils.Simulate.click(downButton);
-    assert.equal(instance.state.count, 5);
-    assert.equal(input.value, 5);
+    ReactTestUtils.Simulate.click(downButton);
+    assert.equal(instance.state.count, 4);
+    assert.equal(input.value, 4);
+    ReactTestUtils.Simulate.click(upButton);
     ReactTestUtils.Simulate.click(upButton);
     assert.equal(instance.state.count, 6);
     assert.equal(input.value, 6);
+  });
+
+  it('should correctly update input after change and click sequence', () => {
+    input.value = '4';
+    ReactTestUtils.Simulate.change(input); 
+    ReactTestUtils.Simulate.click(upButton); 
+    assert.equal(input.value, 5);
   });
 });

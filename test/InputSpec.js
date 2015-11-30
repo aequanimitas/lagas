@@ -12,4 +12,12 @@ describe('Input', () => {
     expect(inp.type).to.equal('text');
     expect(inp.defaultValue).to.equal('12');
   });
+
+  it('should change', (done) => {
+    let doneFn = () => {
+      done();
+    };
+    instance = ReactTestUtils.renderIntoDocument(<Input default="12" onChange={doneFn}/>);
+    ReactTestUtils.Simulate.change(ReactDOM.findDOMNode(instance));
+  });
 });
