@@ -8,7 +8,7 @@ describe('Spinner', () => {
   let instance, buttons, upButton, downButton, input;
 
   beforeEach(() => {
-    instance = ReactTestUtils.renderIntoDocument(<Spinner initVal={6}/>);
+    instance = ReactTestUtils.renderIntoDocument(<Spinner initVal={6} min={5} max={8} btnWrapper={<div class='btn-wrap' />}/>);
     buttons = ReactTestUtils.scryRenderedDOMComponentsWithTag(instance, 'button');
     input = ReactTestUtils.findRenderedDOMComponentWithTag(instance, 'input');
     upButton = ReactDOM.findDOMNode(buttons[0]);

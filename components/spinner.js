@@ -8,8 +8,11 @@ export class Spinner extends React.Component {
     this.state = {count: props.initVal, defaultValue: 12}
   }
 
-  changeCount(arg) {
+  handleOnChange(event) {
+    this.setState({count: event.target.value});
+  }
 
+  changeCount(arg) {
     if (arg === 'inc') {
       this.setState({count: this.state.count + 1});
     } else if (arg === 'dec') {
@@ -20,7 +23,7 @@ export class Spinner extends React.Component {
   render() {
     return (
       <div>
-        <Input value={this.state.count} default={this.state.defaultValue}/>
+        <Input onChange={this.handleOnChange.bind(this)} value={this.state.count} default={this.state.defaultValue}/>
         <Button onClick={this.changeCount.bind(this, 'inc')} btnClass={['btn', 'up-button', 'up-down-buttons']}><i></i></Button>
         <Button onClick={this.changeCount.bind(this, 'dec')} btnClass={['btn', 'down-button', 'up-down-buttons']}><i></i></Button>
       </div>
