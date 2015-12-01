@@ -7,7 +7,7 @@
 }
 
 .spinner {
-  width: 100px;
+  width: 60px;
 }
 
 .spinner > input {
@@ -15,14 +15,20 @@
 }
 
 .up-down-buttons {
-    display: block;
-      float: none;
-        width: 100%;
-          max-width: 100%;
-            padding: 8px;
-              margin-left: -1px;
-                position: relative;
-                  border-radius: 0;
+   display: block;
+   float: none;
+   width: 100%;
+   max-width: 100%;
+   padding: 8px;
+   margin-left: -1px;
+   position: relative;
+   border-radius: 0;
+}
+
+.up-down-buttons i {
+  position: absolute;
+  top: 0;
+  left: 4px;
 }
 
 .up-button {
