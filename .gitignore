@@ -3,3 +3,4 @@ npmcomp.sh
 bundle.js
 *.sw*
 npm-debug.log
+.bundle/
