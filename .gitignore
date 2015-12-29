@@ -4,3 +4,8 @@ bundle.js
 *.sw*
 npm-debug.log
 .bundle/
+.sass-cache
+*.css
+*.map
+vendor/
+Gemfile

@@ -13,26 +13,36 @@ export class Spinner extends React.Component {
   }
 
   changeCount(arg) {
+    let temp;
     if (arg === 'inc') {
-      this.setState({count: parseInt(this.state.count, 10) + 1});
+      temp = parseInt(this.state.count, 10) + 1;
     } else if (arg === 'dec') {
-      this.setState({count: parseInt(this.state.count, 10) - 1});
+      temp = parseInt(this.state.count, 10) - 1;
+    } else {
+      temp = parseInt(this.state.count, 10);
     }
+    this.setState({count: temp});
+  }
+
+  withinBounds(x) {
+    console.log(this.props);
+    return false;
   }
 
   render() {
+    withinBound(10);
     return (
       <div className={'input-group spinner'}>
         <Input onChange={this.handleOnChange.bind(this)} value={this.state.count} />
-        <div className={'btn-wrapper'}>
+        <div className={'btn-wrapper input-group'}>
           <Button 
             onClick={this.changeCount.bind(this, 'inc')} 
-            btnClass={['btn', 'up-button', 'up-down-buttons']}>
+            btnClass={['btn', 'btn-default', 'up-button', 'up-down-buttons']}>
             <i className={'fa fa-caret-up'}></i>
           </Button>
           <Button 
             onClick={this.changeCount.bind(this, 'dec')} 
-            btnClass={['btn', 'down-button', 'up-down-buttons']}>
+            btnClass={['btn', 'down-button', 'btn-default', 'up-down-buttons']}>
             <i className={'fa fa-caret-down'}></i>
           </Button>
         </div>
@@ -42,5 +52,7 @@ export class Spinner extends React.Component {
 }
 
 Spinner.propTypes = {
-  initVal: React.PropTypes.number.isRequired
+  initVal: React.PropTypes.number.isRequired,
+  min: React.PropTypes.number.isRequired,
+  max: React.PropTypes.number.isRequired
 }
