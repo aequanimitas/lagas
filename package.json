@@ -5,12 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "karma start --single-run",
-    "test:watch": "karma start",
     "build:js": "./node_modules/webpack/bin/webpack.js --progress --profile --colors",
+    "watch:test:karma": "karma start",
     "watch:static": "node server.livereload.js",
-    "sass": "bundle exec sass --watch public/sass/main.scss:public/main.css",
+    "watch:static:sass": "bundle exec sass --watch public/sass/main.scss:public/main.css",
+    "watch:static:lint": "",
     "serve": "PORT=4000 node server.js",
-    "watch": "npm run watch:static & npm run serve & npm run sass",
+    "watch": "npm run watch:static & npm run serve & npm run watch:static:sass",
     "lint": "eslint ./"
   },
   "repository": {
