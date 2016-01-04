@@ -30,7 +30,7 @@ export class App extends React.Component {
             <input type="number" min="5" max="10" step="1" className={'routine-exercise form-control'} />
           </div>
         </RoutineWork>
-        <RoutineWork routineClassName={['container', 'bodyline-routine']}>
+        <RoutineWork routineClassName={['container', 'bodyline-routine', 'routine']}>
           <div className={'form-group'}>
             <input type="number" min="5" max="10" step="1" className={'routine-exercise form-control'} />
           </div>
@@ -47,7 +47,7 @@ export class App extends React.Component {
             <input type="number" min="5" max="10" step="1" className={'routine-exercise form-control'} />
           </div>
         </RoutineWork>
-        <RoutineWork routineClassName={['container', 'skillwork-routine']}>
+        <RoutineWork routineClassName={['container', 'skillwork-routine', 'routine']}>
           <div className={'form-group'}>
             <input type="number" min="5" max="10" step="1" className={'routine-exercise form-control'} />
           </div>
@@ -55,7 +55,7 @@ export class App extends React.Component {
             <input type="number" min="5" max="10" step="1" className={'routine-exercise form-control'} />
           </div>
         </RoutineWork>
-        <RoutineWork routineClassName={['container', 'strength-routine']}>
+        <RoutineWork routineClassName={['container', 'strength-routine', 'routine']}>
           <div className={'form-group'}>
             <input type="number" min="5" max="10" step="1" className={'routine-exercise form-control'} />
           </div>

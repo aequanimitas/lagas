@@ -43,6 +43,10 @@ describe('App defaults', () => {
       routine = ReactDOM.findDOMNode(routines[1]);
     });
 
+    it('should have class routine', () => {
+      assert.ok(routine.classList.contains('routine'));
+    });
+
     it('should have class bodyline-routine', () => {
       assert.ok(routine.classList.contains('bodyline-routine'));
     });
@@ -58,6 +62,10 @@ describe('App defaults', () => {
       routine = ReactDOM.findDOMNode(routines[2]);
     });
 
+    it('should have class routine', () => {
+      assert.ok(routine.classList.contains('routine'));
+    });
+
     it('should have class skillwork-routine', () => {
       assert.ok(routine.classList.contains('skillwork-routine'));
     });
@@ -71,7 +79,11 @@ describe('App defaults', () => {
   describe('strength routine', () => {
     beforeEach(() => {
       routine = ReactDOM.findDOMNode(routines[3]);
-    })
+    });
+
+    it('should have class routine', () => {
+      assert.ok(routine.classList.contains('routine'));
+    });
 
     it('should have class strength-routine', () => {
       assert.ok(routine.classList.contains('strength-routine'));
