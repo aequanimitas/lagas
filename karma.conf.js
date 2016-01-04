@@ -48,6 +48,11 @@ module.exports = function(config) {
     browsers: [ devBrowser ],
 
     captureTimeout: 60000,
+
     browserNoActivityTimeout: 45000,
+
+    client: {
+      captureConsole: true
+    }
   });
 };
