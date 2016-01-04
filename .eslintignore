@@ -1,4 +1,5 @@
 node_modules/**
+test/
 public/bundle.js
 server.js
 server.livereload.js
