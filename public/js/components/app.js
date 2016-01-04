@@ -1,5 +1,4 @@
 import React from 'react';
-import classNames from 'classnames';
 
 import {RoutineWork} from './routinework';
 
@@ -9,13 +8,27 @@ export class App extends React.Component {
       <ul>
         <RoutineWork routineClassName={['container', 'stretch-routine']}>
           <span className={'routine-label'}>Stretch</span>
-          <input type="number" className={'routine-exercise'} />
-          <input type="number" className={'routine-exercise'} />
-          <input type="number" className={'routine-exercise'} />
-          <input type="number" className={'routine-exercise'} />
-          <input type="number" className={'routine-exercise'} />
-          <input type="number" className={'routine-exercise'} />
-          <input type="number" className={'routine-exercise'} />
+          <div className={'form-group'}>
+            <input type="number" min="5" max="10" step="1" className={'routine-exercise form-control'} />
+          </div>
+          <div className={'form-group'}>
+            <input type="number" min="5" max="10" step="1" className={'routine-exercise form-control'} />
+          </div>
+          <div className={'form-group'}>
+            <input type="number" min="5" max="10" step="1" className={'routine-exercise form-control'} />
+          </div>
+          <div className={'form-group'}>
+            <input type="number" min="5" max="10" step="1" className={'routine-exercise form-control'} />
+          </div>
+          <div className={'form-group'}>
+            <input type="number" min="5" max="10" step="1" className={'routine-exercise form-control'} />
+          </div>
+          <div className={'form-group'}>
+            <input type="number" min="5" max="10" step="1" className={'routine-exercise form-control'} />
+          </div>
+          <div className={'form-group'}>
+            <input type="number" min="5" max="10" step="1" className={'routine-exercise form-control'} />
+          </div>
         </RoutineWork>
         <RoutineWork routineClassName={['container', 'bodyline-routine']} />
         <RoutineWork routineClassName={['container', 'skillwork-routine']} />

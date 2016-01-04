@@ -31,3 +31,8 @@
   }
 }
 
+.form-control {
+  &.routine-exercise {
+    width: 120px;
+  }
+}

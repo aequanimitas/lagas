@@ -30,6 +30,7 @@ describe('App spa', () => {
 
     it('should have 7 dynamic stretches', () => {
       assert.equal(stretchRoutine.getElementsByClassName('routine-exercise').length, 7);
+      assert.equal(stretchRoutine.getElementsByClassName('form-group').length, 7);
     });
   });
 
