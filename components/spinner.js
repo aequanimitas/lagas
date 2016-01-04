@@ -32,27 +32,13 @@ export class Spinner extends React.Component {
 
   render() {
     return (
-      <div className={'input-group spinner'}>
-        <Input onChange={this.handleOnChange.bind(this)} value={this.state.count} />
-        <div className={'btn-wrapper input-group'}>
-          <Button 
-            onClick={this.changeCount.bind(this, 'inc')} 
-            btnClass={['btn', 'btn-default', 'up-button', 'up-down-buttons']}>
-            <i className={'fa fa-caret-up'}></i>
-          </Button>
-          <Button 
-            onClick={this.changeCount.bind(this, 'dec')} 
-            btnClass={['btn', 'down-button', 'btn-default', 'up-down-buttons']}>
-            <i className={'fa fa-caret-down'}></i>
-          </Button>
-        </div>
+     <form onSubmit={this.handleSubmit}>
+      <div className={'spinner'}>
+        <input type="text" required/>
+        <input type="number" className={'form-control'} min="1" max="15"i defaultValue="5"/>
       </div>
+      <button type="submit">Submit</button>
+      </form>
     );
   }
-}
-
-Spinner.propTypes = {
-  initVal: React.PropTypes.number.isRequired,
-  min: React.PropTypes.number.isRequired,
-  max: React.PropTypes.number.isRequired
 }
