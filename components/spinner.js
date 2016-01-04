@@ -26,11 +26,11 @@ export class Spinner extends React.Component {
 
   withinBounds(x) {
     console.log(this.props);
+    console.log(x);
     return false;
   }
 
   render() {
-    withinBound(10);
     return (
       <div className={'input-group spinner'}>
         <Input onChange={this.handleOnChange.bind(this)} value={this.state.count} />
