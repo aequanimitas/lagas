@@ -9,3 +9,4 @@ npm-debug.log
 *.map
 vendor/
 Gemfile
+Gemfile.lock
