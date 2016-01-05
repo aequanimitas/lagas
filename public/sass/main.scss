@@ -1,5 +1,5 @@
 .spinner {
-  width: 75px;
+  width: px;
   > input { text-align: start; }
   .btn-wrapper {
     position: relative;
@@ -9,31 +9,31 @@
     display: table-cell;
   }
   .up-down-buttons {
-     display: block;
-     float: none;
-     width: 100%;
-     max-width: 100%;
-     padding: 8px;
-     margin-left: -1px;
-     position: relative;
-     border-radius: 0;
+    display: block;
+    float: none;
+    width: 100%;
+    max-width: 100%;
+    padding: 8px;
+    margin-left: -1px;
+    position: relative;
+    border-radius: 0;
 
-     i {
-       position: absolute;
-       top: 0;
-       left: 4px;
-     }
-     &.up-button { border-top-right-radius: 4px; }
-     &.down-button {
-       margin-top: -2px;
-       border-bottom-right-radius: 4px;
-     }
+    i {
+      position: absolute;
+      top: 0;
+      left: 4px;
+    }
+    &.up-button { border-top-right-radius: 4px; }
+    &.down-button {
+      margin-top: -2px;
+      border-bottom-right-radius: 4px;
+    }
   }
 }
 
 .form-control {
   &.routine-exercise {
-    width: 120px;
+    width: 1.6rem;
   }
 }
 

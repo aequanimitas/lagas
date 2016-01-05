@@ -11,8 +11,9 @@
     "watch:static:sass": "bundle exec sass --watch public/sass/main.scss:public/main.css",
     "watch:static:lint": "onchange 'public/js/components/*.js' -- eslint ./",
     "serve": "PORT=4000 node server.js",
-    "watch": "npm run watch:test:karma & npm run watch:static & npm run serve & npm run watch:static:lint & npm run watch:static:sass",
-    "lint": "eslint ./"
+    "watch": "npm run watch:test:karma & npm run watch:static & NODE_ENV=dev npm run serve & npm run watch:static:lint & npm run watch:static:sass",
+    "lint": "eslint ./",
+    "build:serve": "npm run build:js & npm run serve"
   },
   "repository": {
     "type": "git",

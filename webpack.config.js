@@ -1,3 +1,12 @@
+var webpack = require('webpack');
+var debug = process.env.NODE_ENV !== 'production';
+
+var plugins = [
+    new webpack.DefinePlugin({
+      'process.env': {NODE_ENV: 'production'}
+    })
+  ]
+
 module.exports = {
   entry: './client.js',
   output: {
