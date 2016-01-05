@@ -30,6 +30,7 @@ describe('App defaults', () => {
     it('should have label with text "Dynamic Stretches"', () => {
       let lbl = routine.getElementsByClassName('routine-label');
       assert.equal(lbl.length, 1);
+      assert.equal(lbl[0].innerText, 'Dynamic Stretches');
     });
 
     it('should have 7 dynamic stretches', () => {
@@ -45,6 +46,12 @@ describe('App defaults', () => {
 
     it('should have class routine', () => {
       assert.ok(routine.classList.contains('routine'));
+    });
+
+    it('should have label with text "Bodyline Work"', () => {
+      let lbl = routine.getElementsByClassName('routine-label');
+      assert.equal(lbl.length, 1);
+      assert.equal(lbl[0].innerText, 'Bodyline work');
     });
 
     it('should have class bodyline-routine', () => {
@@ -64,6 +71,12 @@ describe('App defaults', () => {
 
     it('should have class routine', () => {
       assert.ok(routine.classList.contains('routine'));
+    });
+
+    it('should have label with text "Skillwork"', () => {
+      let lbl = routine.getElementsByClassName('routine-label');
+      assert.equal(lbl.length, 1);
+      assert.equal(lbl[0].innerText, 'Skill work');
     });
 
     it('should have class skillwork-routine', () => {
@@ -87,6 +100,12 @@ describe('App defaults', () => {
 
     it('should have class strength-routine', () => {
       assert.ok(routine.classList.contains('strength-routine'));
+    });
+
+    it('should have label with text "Strength work"', () => {
+      let lbl = routine.getElementsByClassName('routine-label');
+      assert.equal(lbl.length, 1);
+      assert.equal(lbl[0].innerText, 'Strength work');
     });
 
     it('should have 6 strength exercises', () => {
