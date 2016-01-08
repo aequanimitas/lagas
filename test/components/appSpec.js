@@ -2,15 +2,21 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import ReactTestUtils from 'react/lib/ReactTestUtils';
 
-import {App} from '../../../public/js/components/app';
+import {App} from '../../public/js/components/app';
+
+const {
+  renderIntoDocument,
+  scryRenderedDOMComponentsWithTag,
+  scryRenderedDOMComponentsWithClass
+} = ReactTestUtils;
 
 describe('App defaults', () => {
   let app, routines, routineWrapper, routine;
 
   beforeEach(() => {
-    app = ReactTestUtils.renderIntoDocument(<App />);
-    routineWrapper = ReactTestUtils.scryRenderedDOMComponentsWithTag(app, 'ul');
-    routines = ReactTestUtils.scryRenderedDOMComponentsWithClass(app, 'container');
+    app = renderIntoDocument(<App />);
+    routineWrapper = scryRenderedDOMComponentsWithTag(app, 'ul');
+    routines = scryRenderedDOMComponentsWithClass(app, 'container');
   });
   
   describe('stretch routine', () => {

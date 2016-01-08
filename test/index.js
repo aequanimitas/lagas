@@ -1,2 +1,2 @@
-const testsContext = require.context('./js/components', true, /Spec$/);
+const testsContext = require.context('./components', true, /Spec$/);
 testsContext.keys().forEach(testsContext);
