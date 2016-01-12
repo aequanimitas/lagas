@@ -3,18 +3,6 @@
   "version": "0.0.1",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "test": "karma start --single-run",
-    "build:js": "./node_modules/webpack/bin/webpack.js --progress --profile --colors",
-    "watch:test:karma": "karma start",
-    "watch:static": "node server.livereload.js",
-    "watch:static:sass": "bundle exec sass --watch public/sass/main.scss:public/main.css",
-    "watch:static:lint": "onchange 'public/js/components/*.js' -- eslint ./",
-    "serve": "PORT=4000 node server.js",
-    "watch": "npm run watch:test:karma & npm run watch:static & NODE_ENV=dev npm run serve & npm run watch:static:lint & npm run watch:static:sass",
-    "lint": "eslint ./",
-    "build:serve": "npm run build:js & npm run serve"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/aequanimitas/lagas.git"
@@ -28,6 +16,7 @@
   "dependencies": {
     "bootstrap": "^3.3.5",
     "classnames": "^2.2.1",
+    "deku": "^1.0.0",
     "express": "^4.13.3",
     "font-awesome": "^4.4.0",
     "react-dom": "^0.14.3",
@@ -60,5 +49,17 @@
     "node-sass": "^3.4.2",
     "onchange": "^2.0.0",
     "sinon": "^1.17.2"
+  },
+  "scripts": {
+    "test": "karma start --single-run",
+    "build:js": "./node_modules/webpack/bin/webpack.js --progress --profile --colors",
+    "watch:test:karma": "karma start",
+    "watch:static": "node server.livereload.js",
+    "watch:static:sass": "bundle exec sass --watch public/sass/main.scss:public/main.css",
+    "watch:static:lint": "onchange 'public/js/components/*.js' -- eslint ./",
+    "serve": "PORT=4000 node server.js",
+    "watch": "npm run watch:test:karma & npm run watch:static & NODE_ENV=dev npm run serve & npm run watch:static:lint & npm run watch:static:sass",
+    "lint": "eslint ./",
+    "build:serve": "npm run build:js & npm run serve"
   }
 }
