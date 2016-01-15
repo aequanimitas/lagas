@@ -16,10 +16,12 @@
   "dependencies": {
     "bootstrap": "^3.3.5",
     "classnames": "^2.2.1",
+    "css-loader": "^0.23.1",
     "deku": "^1.0.0",
     "express": "^4.13.3",
     "font-awesome": "^4.4.0",
     "react-dom": "^0.14.3",
+    "style-loader": "^0.13.0",
     "webpack": "^1.12.8"
   },
   "devDependencies": {
@@ -48,7 +50,8 @@
     "node-livereload": "^0.6.0",
     "node-sass": "^3.4.2",
     "onchange": "^2.0.0",
-    "sinon": "^1.17.2"
+    "sinon": "^1.17.2",
+    "webpack-dev-server": "^1.14.1"
   },
   "scripts": {
     "test": "karma start --single-run",
