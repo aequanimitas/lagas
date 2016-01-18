@@ -1,7 +1,20 @@
 var express = require('express');
-var app = express();
+var webpackDevMiddleware = require('webpack-dev-middleware');
+var webpackHotMiddleware = require('webpack-hot-middleware');
+var webpack = require('webpack');
+var config = require('./webpack.config');
 
-app.use(express.static('./public'));
-app.use(express.static('./node_modules/bootstrap/dist'));
-app.use(express.static('./node_modules/font-awesome'));
+var app = express();
+var compiler = webpack(config);
+
+app.use(webpackDevMiddleware(compiler, {
+  noInfo: true, stats: { colors: true }, publicPath: config.output.publicPath
+}));
+
+app.use(webpackHotMiddleware(compiler));
+
+app.get('/', function(req, res) {
+  res.sendFile(__dirname + '/index.html');
+});
+
 app.listen(process.env.PORT || 3000);
