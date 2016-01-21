@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import ReactTestUtils from 'react/lib/ReactTestUtils';
+import expect from 'expect';
 
 import {App} from '../../public/js/components/app';
 
@@ -26,22 +27,22 @@ describe('App defaults', () => {
     });
 
     it('should have class stretch-routine', () => {
-      assert.ok(routine.classList.contains('stretch-routine'));
+      expect(routine.classList.contains('stretch-routine')).toBe(true);
     });
 
     it('should have class routine', () => {
-      assert.ok(routine.classList.contains('routine'));
+      expect(routine.classList.contains('routine')).toBe(true);
     });
 
     it('should have label with text "Dynamic Stretches"', () => {
       let lbl = routine.getElementsByClassName('routine-label');
-      assert.equal(lbl.length, 1);
-      assert.equal(lbl[0].innerText, 'Dynamic Stretches');
+      expect(lbl.length).toEqual(1);
+      expect(lbl[0].innerText, 'Dynamic Stretches')
     });
 
     it('should have 7 dynamic stretches', () => {
-      assert.equal(routine.getElementsByClassName('routine-exercise').length, 7);
-      assert.equal(routine.getElementsByClassName('form-group').length, 7);
+      expect(routine.getElementsByClassName('routine-exercise').length).toEqual(7);
+      expect(routine.getElementsByClassName('form-group').length).toEqual(7);
     });
   });
 
@@ -51,22 +52,22 @@ describe('App defaults', () => {
     });
 
     it('should have class routine', () => {
-      assert.ok(routine.classList.contains('routine'));
+      expect(routine.classList.contains('routine')).toBe(true);
     });
 
     it('should have label with text "Bodyline Work"', () => {
       let lbl = routine.getElementsByClassName('routine-label');
-      assert.equal(lbl.length, 1);
-      assert.equal(lbl[0].innerText, 'Bodyline work');
+      expect(lbl.length).toEqual(1);
+      expect(lbl[0].textContent).toEqual('Bodyline work');
     });
 
     it('should have class bodyline-routine', () => {
-      assert.ok(routine.classList.contains('bodyline-routine'));
+      expect(routine.classList.contains('bodyline-routine')).toBe(true);
     });
 
     it('should have 5 bodyline exercises', () => {
-      assert.equal(routine.getElementsByClassName('routine-exercise').length, 5);
-      assert.equal(routine.getElementsByClassName('form-group').length, 5);
+      expect(routine.getElementsByClassName('routine-exercise').length).toEqual(5);
+      expect(routine.getElementsByClassName('form-group').length).toEqual(5);
     });
   });
 
@@ -76,22 +77,22 @@ describe('App defaults', () => {
     });
 
     it('should have class routine', () => {
-      assert.ok(routine.classList.contains('routine'));
+      expect(routine.classList.contains('routine')).toBe(true);
     });
 
     it('should have label with text "Skillwork"', () => {
       let lbl = routine.getElementsByClassName('routine-label');
-      assert.equal(lbl.length, 1);
-      assert.equal(lbl[0].innerText, 'Skill work');
+      expect(lbl.length).toEqual(1);
+      expect(lbl[0].textContent).toEqual('Skill work');
     });
 
     it('should have class skillwork-routine', () => {
-      assert.ok(routine.classList.contains('skillwork-routine'));
+      expect(routine.classList.contains('skillwork-routine')).toBe(true);
     });
     
-    it('should have 2 skill-wrok exercises', () => {
-      assert.equal(routine.getElementsByClassName('routine-exercise').length, 2);
-      assert.equal(routine.getElementsByClassName('form-group').length, 2);
+    it('should have 2 skill-work exercises', () => {
+      expect(routine.getElementsByClassName('routine-exercise').length).toEqual(2);
+      expect(routine.getElementsByClassName('form-group').length).toEqual(2);
     });
   });
 
@@ -101,22 +102,22 @@ describe('App defaults', () => {
     });
 
     it('should have class routine', () => {
-      assert.ok(routine.classList.contains('routine'));
+      expect(routine.classList.contains('routine')).toBe(true);
     });
 
     it('should have class strength-routine', () => {
-      assert.ok(routine.classList.contains('strength-routine'));
+      expect(routine.classList.contains('strength-routine')).toBe(true);
     });
 
     it('should have label with text "Strength work"', () => {
       let lbl = routine.getElementsByClassName('routine-label');
-      assert.equal(lbl.length, 1);
-      assert.equal(lbl[0].innerText, 'Strength work');
+      expect(lbl.length).toEqual(1);
+      expect(lbl[0].textContent).toEqual('Strength work');
     });
 
     it('should have 6 strength exercises', () => {
-      assert.equal(routine.getElementsByClassName('routine-exercise').length, 6);
-      assert.equal(routine.getElementsByClassName('form-group').length, 6);
+      expect(routine.getElementsByClassName('routine-exercise').length).toEqual(6);
+      expect(routine.getElementsByClassName('form-group').length).toEqual(6);
     });
   });
 });
