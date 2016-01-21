@@ -14,7 +14,7 @@ export default class App extends Component {
       { name: "Stretch6" },
       { name: "Stretch7" }
     ];
-    return (<ul className={'pure-g just-wrap pure-form pure-form-aligned'}>
+    return (<div className={'just-wrap pure-form pure-form-stacked'}>
       <Routine routineClassName={['stretch-routine']} 
                    name="Dynamic Stretches" exercises={stretch} />
       <Routine routineClassName={['bodyline-routine']} name="Bodyline work"
@@ -23,7 +23,7 @@ export default class App extends Component {
                    exercises={stretch.slice(5)} />
       <Routine routineClassName={['strength-routine']} name="Strength work"
                    exercises={stretch.slice(1)} />
-    </ul>);
+    </div>);
   }
 }
 
