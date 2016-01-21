@@ -1,4 +1,5 @@
 require('purecss/build/pure.css');
+require('../sass/main.scss');
 
 import React from 'react';
 import { render } from 'react-dom';

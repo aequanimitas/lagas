@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import ReactTestUtils from 'react/lib/ReactTestUtils';
 import expect from 'expect';
 
-import {App} from '../../public/js/components/app';
+import App from '../../src/containers/App';
 
 const {
   renderIntoDocument,
