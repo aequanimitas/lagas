@@ -5,39 +5,24 @@ import Exercise from '../components/Exercise';
 
 export default class App extends Component {
   render() {
+    const stretch = [
+      { exerciseName: "Stretch1" },
+      { exerciseName: "Stretch2" },
+      { exerciseName: "Stretch3" },
+      { exerciseName: "Stretch4" },
+      { exerciseName: "Stretch5" },
+      { exerciseName: "Stretch6" },
+      { exerciseName: "Stretch7" }
+    ];
     return (<ul>
-      <RoutineWork routineClassName={['pure-g', 'pure-u-1', 'stretch-routine', 'routine']}>
-        <span className={'routine-label'}>Dynamic Stretches</span>
-        <Exercise />
-        <Exercise />
-        <Exercise />
-        <Exercise />
-        <Exercise />
-        <Exercise />
-        <Exercise />
-      </RoutineWork>
-      <RoutineWork routineClassName={['pure-g', 'bodyline-routine', 'routine']}>
-        <span className={'routine-label'}>Bodyline work</span>
-        <Exercise />
-        <Exercise />
-        <Exercise />
-        <Exercise />
-        <Exercise />
-      </RoutineWork>
-      <RoutineWork routineClassName={['pure-g', 'skillwork-routine', 'routine']}>
-        <span className={'routine-label'}>Skill work</span>
-        <Exercise />
-        <Exercise />
-      </RoutineWork>
-      <RoutineWork routineClassName={['pure-g', 'strength-routine', 'routine']}>
-        <span className={'routine-label'}>Strength work</span>
-        <Exercise />
-        <Exercise />
-        <Exercise />
-        <Exercise />
-        <Exercise />
-        <Exercise />
-      </RoutineWork>
+      <RoutineWork routineClassName={['pure-g', 'stretch-routine']} 
+                   routineName="Dynamic Stretches" exercises={stretch} />
+      <RoutineWork routineClassName={['pure-g', 'bodyline-routine']} routineName="Bodyline work"
+                   exercises={stretch.slice(2)} />
+      <RoutineWork routineClassName={['pure-g', 'skillwork-routine']} routineName="Skill work"
+                   exercises={stretch.slice(5)} />
+      <RoutineWork routineClassName={['pure-g', 'strength-routine']} routineName="Strength work"
+                   exercises={stretch.slice(1)} />
     </ul>);
   }
 }
