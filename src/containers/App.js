@@ -14,14 +14,14 @@ export default class App extends Component {
       { name: "Stretch6" },
       { name: "Stretch7" }
     ];
-    return (<ul>
-      <Routine routineClassName={['pure-g', 'stretch-routine']} 
+    return (<ul className={'pure-g just-wrap pure-form pure-form-aligned'}>
+      <Routine routineClassName={['stretch-routine']} 
                    name="Dynamic Stretches" exercises={stretch} />
-      <Routine routineClassName={['pure-g', 'bodyline-routine']} name="Bodyline work"
+      <Routine routineClassName={['bodyline-routine']} name="Bodyline work"
                    exercises={stretch.slice(2)} />
-      <Routine routineClassName={['pure-g', 'skillwork-routine']} name="Skill work"
+      <Routine routineClassName={['skillwork-routine']} name="Skill work"
                    exercises={stretch.slice(5)} />
-      <Routine routineClassName={['pure-g', 'strength-routine']} name="Strength work"
+      <Routine routineClassName={['strength-routine']} name="Strength work"
                    exercises={stretch.slice(1)} />
     </ul>);
   }

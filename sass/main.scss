@@ -1,40 +1,10 @@
-.spinner {
-  width: px;
-  > input { text-align: start; }
-  .btn-wrapper {
-    position: relative;
-    white-space: nowrap;
-    width: 1%;
-    vertical-align: middle;
-    display: table-cell;
-  }
-  .up-down-buttons {
-    display: block;
-    float: none;
-    width: 100%;
-    max-width: 100%;
-    padding: 8px;
-    margin-left: -1px;
-    position: relative;
-    border-radius: 0;
-
-    i {
-      position: absolute;
-      top: 0;
-      left: 4px;
-    }
-    &.up-button { border-top-right-radius: 4px; }
-    &.down-button {
-      margin-top: -2px;
-      border-bottom-right-radius: 4px;
-    }
-  }
+#root {
+  margin: 0 auto;
+  max-width: 980px;
 }
 
-.form-control {
-  &.routine-exercise {
-    width: 1.6rem;
-  }
+.just-wrap {
+  padding: 0;
 }
 
-@import 'routine';
+// @import 'routine';

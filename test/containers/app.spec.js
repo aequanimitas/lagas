@@ -17,7 +17,7 @@ describe('App defaults', () => {
   beforeEach(() => {
     app = renderIntoDocument(<App />);
     routineWrapper = scryRenderedDOMComponentsWithTag(app, 'ul');
-    routines = scryRenderedDOMComponentsWithClass(app, 'pure-g');
+    routines = scryRenderedDOMComponentsWithClass(app, 'routine');
   });
   
   describe('stretch routine', () => {
