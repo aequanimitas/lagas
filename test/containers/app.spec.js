@@ -17,7 +17,7 @@ describe('App defaults', () => {
   beforeEach(() => {
     app = renderIntoDocument(<App />);
     routineWrapper = scryRenderedDOMComponentsWithTag(app, 'ul');
-    routines = scryRenderedDOMComponentsWithClass(app, 'container');
+    routines = scryRenderedDOMComponentsWithClass(app, 'pure-g');
   });
   
   describe('stretch routine', () => {
@@ -42,7 +42,7 @@ describe('App defaults', () => {
 
     it('should have 7 dynamic stretches', () => {
       expect(routine.getElementsByClassName('routine-exercise').length).toEqual(7);
-      expect(routine.getElementsByClassName('form-group').length).toEqual(7);
+      expect(routine.getElementsByClassName('pure-control-group').length).toEqual(7);
     });
   });
 
@@ -67,7 +67,7 @@ describe('App defaults', () => {
 
     it('should have 5 bodyline exercises', () => {
       expect(routine.getElementsByClassName('routine-exercise').length).toEqual(5);
-      expect(routine.getElementsByClassName('form-group').length).toEqual(5);
+      expect(routine.getElementsByClassName('pure-control-group').length).toEqual(5);
     });
   });
 
@@ -92,7 +92,7 @@ describe('App defaults', () => {
     
     it('should have 2 skill-work exercises', () => {
       expect(routine.getElementsByClassName('routine-exercise').length).toEqual(2);
-      expect(routine.getElementsByClassName('form-group').length).toEqual(2);
+      expect(routine.getElementsByClassName('pure-control-group').length).toEqual(2);
     });
   });
 
@@ -117,7 +117,7 @@ describe('App defaults', () => {
 
     it('should have 6 strength exercises', () => {
       expect(routine.getElementsByClassName('routine-exercise').length).toEqual(6);
-      expect(routine.getElementsByClassName('form-group').length).toEqual(6);
+      expect(routine.getElementsByClassName('pure-control-group').length).toEqual(6);
     });
   });
 });
