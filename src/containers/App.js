@@ -1,27 +1,27 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
-import { RoutineWork } from '../components/RoutineWork';
+import { Routine } from '../components/Routine';
 import Exercise from '../components/Exercise';
 
 export default class App extends Component {
   render() {
     const stretch = [
-      { exerciseName: "Stretch1" },
-      { exerciseName: "Stretch2" },
-      { exerciseName: "Stretch3" },
-      { exerciseName: "Stretch4" },
-      { exerciseName: "Stretch5" },
-      { exerciseName: "Stretch6" },
-      { exerciseName: "Stretch7" }
+      { name: "Stretch1" },
+      { name: "Stretch2" },
+      { name: "Stretch3" },
+      { name: "Stretch4" },
+      { name: "Stretch5" },
+      { name: "Stretch6" },
+      { name: "Stretch7" }
     ];
     return (<ul>
-      <RoutineWork routineClassName={['pure-g', 'stretch-routine']} 
-                   routineName="Dynamic Stretches" exercises={stretch} />
-      <RoutineWork routineClassName={['pure-g', 'bodyline-routine']} routineName="Bodyline work"
+      <Routine routineClassName={['pure-g', 'stretch-routine']} 
+                   name="Dynamic Stretches" exercises={stretch} />
+      <Routine routineClassName={['pure-g', 'bodyline-routine']} name="Bodyline work"
                    exercises={stretch.slice(2)} />
-      <RoutineWork routineClassName={['pure-g', 'skillwork-routine']} routineName="Skill work"
+      <Routine routineClassName={['pure-g', 'skillwork-routine']} name="Skill work"
                    exercises={stretch.slice(5)} />
-      <RoutineWork routineClassName={['pure-g', 'strength-routine']} routineName="Strength work"
+      <Routine routineClassName={['pure-g', 'strength-routine']} name="Strength work"
                    exercises={stretch.slice(1)} />
     </ul>);
   }
