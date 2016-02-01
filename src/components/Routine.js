@@ -4,7 +4,7 @@ import Exercise from './Exercise';
 
 export class Routine extends Component {
   render() {
-    const classes = [this.props.routineClassName, 'routine', 'pure-g', 'pure-u-md-1-2'];
+    const classes = [this.props.routineClassName, 'routine', 'pure-g', 'pure-u-md-1-1'];
     return (
       <div {...this.props} className={classNames(classes)}>
         <h2 className={'routine-label'}>{this.props.name}</h2>
