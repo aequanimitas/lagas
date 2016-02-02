@@ -41,6 +41,6 @@
   "scripts": {
     "test": "mocha --compilers js:babel-core/register --recursive --require test/utils/jsdom.js",
     "test:w": "npm run test -- --watch",
-    "start": "node server.js"
+    "start": "node server"
   }
 }
