@@ -9,7 +9,6 @@ describe('App defaults', () => {
      let renderer = TestUtils.createRenderer();
      renderer.render(<App />);
      let output = renderer.getRenderOutput();
-     console.log(output);
-     expect(output.props.children.length).toBe(1);
+     expect(output.props.children.type.name).toBe('Exercise');
   });
 });
