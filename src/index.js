@@ -5,9 +5,9 @@ require('../sass/main.scss');
 import React from 'react';
 import { render } from 'react-dom';
 
-import Exercise from './components/Exercise';
+import App from './containers/App';
 
 render(
-  <Exercise />,
+  <App />,
   document.getElementById('root')
 );
