@@ -13,12 +13,21 @@ class Exercise extends Component {
 
   changeCount(arg) {
     let exCount = parseInt(this.state.count, 10);
-
-      if (arg === 'inc') {
-        this.setState({count: parseInt(this.state.count, 10) + 1});
-      } else if (arg === 'dec') {
-        this.setState({count: parseInt(this.state.count, 10) - 1});
+    if (arg === 'inc') {
+      if ((exCount + 1) > 8) {
+        return null;
+      } else {
+        this.setState({count: exCount + 1});
       }
+    } else if(arg === 'dec') {
+      if((exCount - 1) < 5) {
+        return null;
+      } else {
+        this.setState({count: exCount - 1});
+      }
+    } else {
+      return null;
+    }
   }
 
   render() {
