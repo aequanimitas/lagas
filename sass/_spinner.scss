@@ -1,5 +1,8 @@
 .spinner {
-  width: 12rem;
+  width: 100px;
+  position: relative;
+  display: table;
+  border-collapse: separate;
   > input { text-align: start; }
   .btn-wrapper {
     position: relative;
@@ -7,7 +10,9 @@
     width: 1%;
     vertical-align: middle;
     display: table-cell;
+    left: -1.2rem;
   }
+
   .up-down-buttons {
     display: block;
     float: none;
@@ -18,11 +23,12 @@
     position: relative;
     border-radius: 0;
 
-    i {
+    > i {
       position: absolute;
       top: 0;
       left: 4px;
     }
+
     &.up-button { border-top-right-radius: 4px; }
     &.down-button {
       margin-top: -2px;

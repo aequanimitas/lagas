@@ -31,14 +31,16 @@ class Exercise extends Component {
   }
 
   render() {
-    return (<div>
+    return (<div className={"spinner"}>
         <input onChange={this.handleOnChange.bind(this)} value={this.state.count} />
+	<div className={"btn-wrapper"}>
         <Button onClick={this.changeCount.bind(this, 'inc')} 
 	        btnClass={['btn', 'up-button', 'up-down-buttons']}><i></i>
         </Button>
         <Button onClick={this.changeCount.bind(this, 'dec')} 
 	        btnClass={['btn', 'down-button', 'up-down-buttons']}><i></i>
         </Button>
+	</div>
       </div>
     );
   }
