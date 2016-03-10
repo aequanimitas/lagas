@@ -22,7 +22,17 @@
     margin-left: -1px;
     position: relative;
     border-radius: 0;
-
+    margin-bottom: 0;
+        font-size: 14px;
+	    font-weight: normal;
+	        line-height: 1.428571429;
+		    text-align: center;
+		        white-space: nowrap;
+			    vertical-align: middle;
+			        cursor: pointer;
+				    background-image: none;
+				        border: 1px solid transparent;
+					    -webkit-appearance: button;
     > i {
       position: absolute;
       top: 0;
