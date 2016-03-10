@@ -1,12 +1,38 @@
-import React from 'react';
-import classNames from 'classnames';
+import React, {Component} from 'react';
+import {Button} from './Button';
 
-export default class Exercise extends React.Component {
+class Exercise extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {count: props.initVal, defaultValue: 12}
+  }
+
+  handleOnChange(event) {
+    this.setState({count: event.target.value});
+  }
+
+  changeCount(arg) {
+    let exCount = parseInt(this.state.count, 10);
+
+      if (arg === 'inc') {
+        this.setState({count: parseInt(this.state.count, 10) + 1});
+      } else if (arg === 'dec') {
+        this.setState({count: parseInt(this.state.count, 10) - 1});
+      }
+  }
+
   render() {
-    return ( <div className={classNames('pure-control-group', 'pure-u-1', 'pure-u-md-1-3')}>
-         <label htmlFor={this.props.name}>{this.props.name}</label>
-         <input type="number" min="5" max="10" step="1" id={this.props.name} className={'pure-u-23-24 routine-exercise form-control'} />
-       </div>
+    return (<div>
+        <input onChange={this.handleOnChange.bind(this)} value={this.state.count} />
+        <Button onClick={this.changeCount.bind(this, 'inc')} 
+	        btnClass={['btn', 'up-button', 'up-down-buttons']}><i></i>
+        </Button>
+        <Button onClick={this.changeCount.bind(this, 'dec')} 
+	        btnClass={['btn', 'down-button', 'up-down-buttons']}><i></i>
+        </Button>
+      </div>
     );
   }
 }
+
+export default Exercise;
