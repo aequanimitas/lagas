@@ -1,9 +1,12 @@
 .spinner {
-  width: 100px;
+  width: 100%;
   position: relative;
   display: table;
   border-collapse: separate;
-  > input { text-align: start; }
+  > input { 
+    text-align: start;
+    width: 100%;
+  }
   .btn-wrapper {
     position: relative;
     white-space: nowrap;
@@ -23,16 +26,16 @@
     position: relative;
     border-radius: 0;
     margin-bottom: 0;
-        font-size: 14px;
-	    font-weight: normal;
-	        line-height: 1.428571429;
-		    text-align: center;
-		        white-space: nowrap;
-			    vertical-align: middle;
-			        cursor: pointer;
-				    background-image: none;
-				        border: 1px solid transparent;
-					    -webkit-appearance: button;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.428571429;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    -webkit-appearance: button;
     > i {
       position: absolute;
       top: 0;

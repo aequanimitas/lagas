@@ -31,7 +31,10 @@ class Exercise extends Component {
   }
 
   render() {
-    return (<div className={"spinner"}>
+    return ( <div>
+		    <div className={"pure-u-11-24"}> <input type="text" /> </div>
+		    <div className={"pure-u-11-24"}>
+		    <div className={"spinner"}>
         <input onChange={this.handleOnChange.bind(this)} value={this.state.count} />
 	<div className={"btn-wrapper"}>
         <Button onClick={this.changeCount.bind(this, 'inc')} 
@@ -41,6 +44,8 @@ class Exercise extends Component {
 	        btnClass={['btn', 'down-button', 'up-down-buttons']}><i></i>
         </Button>
 	</div>
+      </div>
+      </div>
       </div>
     );
   }
