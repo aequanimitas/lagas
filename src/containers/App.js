@@ -5,8 +5,10 @@ import Exercise from '../components/Exercise';
 
 export default class App extends Component {
   render() {
-    return <div className={'just-wrap pure-form pure-form-stacked'}>
+    return <div className={"content"}>
+	    <div className={'just-wrap pure-form pure-form-stacked'}>
        <Exercise initVal={5} />
+    </div>
     </div>
   }
 }
