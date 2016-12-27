@@ -10,3 +10,5 @@ npm-debug.log
 vendor/
 Gemfile
 Gemfile.lock
+log/ 
+pids/
